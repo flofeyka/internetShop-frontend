@@ -2,7 +2,7 @@ import {useForm} from "react-hook-form";
 import {useDispatch} from "react-redux";
 import {RegisterSystem} from "../redux/authSlice";
 import {Button, Input} from "@nextui-org/react";
-import {Link, Navigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 export default function Register() {
     const {register, handleSubmit} = useForm();

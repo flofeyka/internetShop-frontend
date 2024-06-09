@@ -1,5 +1,5 @@
 import {useDispatch, useSelector} from "react-redux";
-import {Checkbox, CheckboxGroup, Radio, RadioGroup} from "@nextui-org/react";
+import {Checkbox, Radio, RadioGroup} from "@nextui-org/react";
 import {useEffect} from "react";
 import {getUserById} from "../redux/profileSlice";
 
@@ -8,13 +8,13 @@ export default function Profile() {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getUserById(id));
-    }, []);
+    }, [dispatch, id]);
 
     return <div>
         <div className={"w-[60vw] min-h-[22.5vh] bg-white rounded-[20px] shadow-xl hover:shadow-2xl"}>
             <div className="p-5">
                 <div className={"flex items-center"}>
-                    <div><img src={""} height={"75px"} width={"75px"}
+                    <div><img src={profileData.image} alt={"user"} height={"75px"} width={"75px"}
                               className={"rounded-full border-solid border-1 border-black mr-3.5"}/></div>
                     <div className={"text-xl font-bold"}>{profileData.name}</div>
                 </div>
