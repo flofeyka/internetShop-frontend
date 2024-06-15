@@ -19,7 +19,7 @@ export const favouritesAPI = {
     async addFavourite(id) {
         const Response = await instance.post(`/addFavourite/${id}`);
         return {
-            data: Response.data,
+            product: Response.data,
             status: Response.status
         }
     },

@@ -24,15 +24,15 @@ const authSlice = createSlice({
 const {setUserData} = authSlice.actions;
 
 export const LoginSystem = createAsyncThunk("auth/login", async (payload, {dispatch}) => {
-    const data = await authAPI.login(payload.email, payload.password);
+    const data = await authAPI.login(payload.email, payload.password, payload.captcha);
     if (data.status === 200) {
         return dispatch(setUserData(data.user))
     }
 })
 
 export const RegisterSystem = createAsyncThunk("auth/register", async (payload, {dispatch}) => {
-    const {name, email, phoneNumber, password} = payload;
-    const data = await authAPI.register(email, name, phoneNumber, password);
+    const {name, email, phoneNumber, password, captcha} = payload;
+    const data = await authAPI.register(email, name, phoneNumber, password, captcha);
     if (data.status === 200) {
         return dispatch(setUserData(data.user))
     }
