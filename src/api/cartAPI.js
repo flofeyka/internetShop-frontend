@@ -9,7 +9,7 @@ const instance = axios.create({
 
 export const cartAPI = {
     async addOne(id) {
-        const Response = await instance.post(`/addOne/${id}`);
+        const Response = await instance.post(`addOne/${id}`);
         return {
             result: Response.data,
             status: Response.status
@@ -17,7 +17,7 @@ export const cartAPI = {
     },
 
     async deleteOne(id) {
-        const Response = await instance.delete(`/deleteOne/${id}`);
+        const Response = await instance.delete(`deleteOne/${id}`);
         return {
             result: Response.data,
             status: Response.status
@@ -25,9 +25,17 @@ export const cartAPI = {
     },
 
     async getAll() {
-        const Response = await instance.get(`/getAll`);
+        const Response = await instance.get(`getAll`);
         return {
             cartList: Response.data,
+            status: Response.status
+        }
+    },
+
+    async updateProductCount(id, count) {
+        const Response = await instance.put(`updateProductCount`, {id, count});
+        return {
+            cartList: Response.data.cartList,
             status: Response.status
         }
     }

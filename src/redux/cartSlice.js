@@ -20,6 +20,9 @@ const cartSlice = createSlice({
         builder.addCase(addOneToCart.fulfilled, (state, action) => {
             state.cartList.push(action.payload);
         })
+        builder.addCase(updateProductCount.fulfilled, (state, action) => {
+            state.cartList = action.payload;
+        })
     }
 });
 
@@ -41,6 +44,13 @@ export const getCartList = createAsyncThunk("cart/getAll", async () => {
     const data = await cartAPI.getAll();
     if(data.status === 200) {
         return data.cartList;
+    }
+})
+
+export const updateProductCount = createAsyncThunk("cart/updateProductCount", async (payload) => {
+    const data = await cartAPI.updateProductCount(payload.id, payload.count);
+    if(data.status === 200) {
+        return data.cartList
     }
 })
 

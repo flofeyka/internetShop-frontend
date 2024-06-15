@@ -1,15 +1,17 @@
 import {useForm} from "react-hook-form";
 import {useDispatch} from "react-redux";
 import {Button, Input} from "@nextui-org/react";
-import {LoginSystem} from "../redux/authSlice";
+import {LoginSystem} from "../../redux/authSlice";
 import {Link} from "react-router-dom";
+import ReCAPTCHA from "react-google-recaptcha";
+import {useState} from "react";
 
 export default function Login() {
     const {register, handleSubmit} = useForm();
     const dispatch = useDispatch();
-
+    const [validCaptcha, setValidCaptcha] = useState(false);
     const onSubmit = data => {
-        dispatch(LoginSystem(data));
+        dispatch(LoginSystem({...data, captcha:validCaptcha}));
     }
 
     return <form onSubmit={handleSubmit(onSubmit)}
@@ -26,8 +28,16 @@ export default function Login() {
                 </div>
             </div>
             <div className={"flex flex-col mt-5"}>
+                <div className={"mb-3"}>
+                    <ReCAPTCHA
+                        sitekey="6LdxNPYpAAAAALhqKU3-g-FdEuDvREGuj_DDQgUo"
+                        onChange={(value) => setValidCaptcha(value)}
+                    />
+                </div>
                 <Button size={"lg"} color={"primary"} type={"submit"}>Войти</Button>
-                <div className={"mt-3"}>Ещё нет аккаунта? <Link to={"/register"} className={"text-primary-400 font-bold"}>Зарегистрируйтесь</Link></div>
+                <div className={"mt-3"}>Ещё нет аккаунта? <Link to={"/register"}
+                                                                className={"text-primary-400 font-bold"}>Зарегистрируйтесь</Link>
+                </div>
             </div>
         </div>
     </form>

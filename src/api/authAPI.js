@@ -6,9 +6,9 @@ const instance = axios.create({
 })
 
 export const authAPI = {
-    async login(email, password) {
+    async login(email, password, captcha) {
         try {
-            const Response = await instance.post("/login", {email, password});
+            const Response = await instance.post("/login", {email, password, captcha});
             await localStorage.setItem("accessToken", Response.data.accessToken);
             return {
                 status: Response.status,
@@ -20,9 +20,9 @@ export const authAPI = {
         }
     },
 
-    async register(email, name, phoneNumber, password) {
+    async register(email, name, phoneNumber, password, captcha) {
         try {
-            const Response = await instance.post("/register", {email, name, phoneNumber, password});
+            const Response = await instance.post("/register", {email, name, phoneNumber, password, captcha});
             await localStorage.setItem("accessToken", Response.data.accessToken);
             return {
                 status: Response.status,

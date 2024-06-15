@@ -14,7 +14,7 @@ const favouritesSlice = createSlice({
             state.favourites.splice(action.payload - 1, 1);
         });
         builder.addCase(addFavourite.fulfilled, (state, action) => {
-            state.favourites = action.payload;
+            state.favourites.push(action.payload);
         })
     }
 });
@@ -29,7 +29,7 @@ export const getAllFavourites = createAsyncThunk("/favourites/getAll", async () 
 export const addFavourite = createAsyncThunk("profile/addFavourite", async (payload) => {
     const data = await favouritesAPI.addFavourite(payload);
     if(data.status === 200) {
-        return payload;
+        return data.product
     }
 });
 
