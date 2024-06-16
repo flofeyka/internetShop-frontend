@@ -71,7 +71,7 @@ export default function Shop() {
               <div className={"flex flex-col items-center mx-auto w-full"}>
                 <img
                   alt={"product"}
-                  src={i.image}
+                  src={"http://localhost:5000/" + i.image}
                   className={
                     "h-[300px] w-full rounded-2xl border-1 border-solid border-black"
                   }
