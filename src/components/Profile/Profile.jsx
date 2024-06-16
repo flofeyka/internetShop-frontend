@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Image, Switch } from "@nextui-org/react";
 import { useEffect } from "react";
-import { getUserById } from "../../redux/profileSlice";
+import { getUserById, uploadUsersImage } from "../../redux/profileSlice";
 import GenderForm from "./Forms/GenderForm";
 import InputForm from "./Forms/InputForm";
+
 
 export default function Profile() {
   const [profileData, id, isOwner] = useSelector((state) => [
@@ -26,15 +27,16 @@ export default function Profile() {
       >
         <div className="p-5">
           <div className={"flex items-center"}>
-            <div>
+            <label>
               <Image
-                src={"" || profileData.image}
+                src={profileData.image}
                 alt={"user"}
                 className={
-                  "rounded-full h-[75px] w-[75px] border-solid border-1 border-black mr-3.5"
+                  "rounded-full h-[75px] w-[75px] border-solid border-1 border-black mr-3.5 cursor-grabbing"
                 }
               />
-            </div>
+              <input type="file" accept={"image/*"} onChange={(e) => dispatch(uploadUsersImage(e.target.files[0]))} hidden className="w-[75px] h-[75px] rounded-full"/>
+            </label>
             <InputForm formName={"name"} name={profileData.name} />
           </div>
           <div className={"mt-5 flex"}>

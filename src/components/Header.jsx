@@ -32,15 +32,13 @@ export default function Header() {
           size={"lg"}
           placeholder={"Введите товар"}
         />
-        <Link to="/shop">
-          <Button
-            onClick={() => dispatch(setSearchText(value))}
-            color={"primary"}
-            size={"lg"}
-          >
-            Поиск
-          </Button>
-        </Link>
+        <Button
+          onClick={() => dispatch(setSearchText(value))}
+          color={"primary"}
+          size={"lg"}
+        >
+          Поиск
+        </Button>
       </div>
       <div className={"flex"}>
         <Link to={`/favourites`} className={"mr-3 flex flex-col items-center"}>
@@ -73,7 +71,7 @@ export default function Header() {
               width="29px"
               src="/Icons/myProducts.svg"
             />
-            <div>Мои продукты</div>
+            <div>Продукты</div>
           </Link>
         )}
         <Link to={`/lk`} className={"mr-3 flex flex-col items-center"}>
@@ -81,7 +79,7 @@ export default function Header() {
             <Image
               lt={"profile"}
               className={
-                "h-[50px] mx-2 w-[50px] rounded-full border-2 border-solid border-black"
+                "h-[50px] mx-2 w-[50px] rounded-full border-1 border-solid border-black"
               }
               src={image}
             />

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: "http://localhost:5000/api/purchases/",
+    baseURL: `http://localhost:5000/api/purchases/`,
     headers: {
         Authorization: `Bearer ${localStorage.getItem('accessToken')}`
     }
@@ -16,8 +16,26 @@ export const purchaseAPI = {
         }
     },
 
-    async editProduct(id, name, description, price) {
-        const Response = await instance.put(`editProduct/${id}`, {name, description, price});
+    async editProductImage(id, file) {
+        const formData = new FormData();
+        formData.append("file", file);
+        const Response = await instance.put(`editProductImage/${id}`, formData, {
+            headers: {
+                "Content-Type": "multipart/form-data"
+            }
+        });
+        return {
+            status: Response.status,
+            data: Response.data
+        }
+    },
+
+    async editProduct(id, name, description, price, file) {
+        const Response = await instance.put(`editProduct/${id}`, {name, description, price}, {
+            headers: {
+                "Content-Type": "multipart/form-data"
+            }
+        });
         return {
             product: Response.data,
             status: Response.status

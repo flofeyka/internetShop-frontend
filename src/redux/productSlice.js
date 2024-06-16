@@ -12,7 +12,9 @@ const productSlice = createSlice({
         productData: {
             textMessage: null
         },
-        myProducts: []
+        myProductsData: {
+            productsList: []
+        }
     },
     reducers: {
         setProductList: (state, action) => {
@@ -39,11 +41,13 @@ const productSlice = createSlice({
             state.productData = action.payload;
         });
         builder.addCase(createProduct.fulfilled, (state, action) => {
-            state.myProducts.push(action.payload);
+            state.myProductsData.productsList.push(action.payload);
             state.productData = action.payload;
         });
         builder.addCase(getMyProducts.fulfilled, (state, action) => {
-            state.myProducts = action.payload;
+            state.myProductsData.productsList = action.payload.data;
+            state.myProductsData.totalCount = action.payload.totalCount;
+            state.myProductsData.amountOfProducts = action.payload.amountOfProducts;
         });
         builder.addCase(editProduct.fulfilled, (state, action) => {
             state.productData = action.payload;
@@ -63,9 +67,17 @@ export const deleteProduct = createAsyncThunk("/products/deleteProduct", async (
     }
 })
 
+export const editProductImage = createAsyncThunk("/products/editProductImage", async (payload) => {
+    const {id, file} = payload;
+    const data = await purchaseAPI.editProductImage(id, file);
+    if(data.status === 200) {
+        return data.product;
+    }
+})
+
 export const editProduct = createAsyncThunk("/products/editProduct", async (payload) => {
-    const {id, name, description, price} = payload;
-    const data = await purchaseAPI.editProduct(id, name, description, price);
+    const {id, name, description, price, file} = payload;
+    const data = await purchaseAPI.editProduct(id, name, description, price, file);
     if(data.status === 200) {
         return data.product;
     }

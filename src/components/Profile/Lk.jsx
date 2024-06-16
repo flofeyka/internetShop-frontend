@@ -25,7 +25,7 @@ export default function Lk() {
             <div className={"p-5"}>
               <div className={"flex items-center"}>
                 <Image
-                  src={profileData.image || ""}
+                  src={profileData.image}
                   alt={"user"}
                   className={
                     "rounded-full w-[80px] h-[80px] flex justify-center items-center bg-[#171923] text-white"
@@ -52,23 +52,21 @@ export default function Lk() {
             </div>
           </div>
         </Link>
-
-        <div
-          className={
-            "w-[25vw]  transition-all cursor-grabbing shadow-xl min-h-[20vh] bg-white rounded-[15px] hover:shadow-2xl"
-          }
-        >
-          <div className={"p-5 flex flex-col items-baseline"}>
-            <div className={"text-4xl font-bold"}>Доставки</div>
-            <div>
-              <span className={"text-gray-400"}>Ближайшая</span> не ожидается
+        <Link to="/myOrders">
+          <div
+            className={
+              "w-[25vw]  transition-all cursor-grabbing shadow-xl min-h-[22vh] bg-white rounded-[15px] hover:shadow-2xl"
+            }
+          >
+            <div className={"p-5 flex flex-col items-baseline"}>
+              <div className={"text-4xl font-bold"}>Мои заказы</div>
             </div>
           </div>
-        </div>
+        </Link>
         <Link
           to={"/cart"}
           className={
-            "w-[25vw]  transition-all cursor-grabbing shadow-xl min-h-[20vh] bg-white rounded-[15px] hover:shadow-2xl ml-5"
+            "w-[25vw] transition-all cursor-grabbing shadow-xl min-h-[20vh] bg-white rounded-[15px] hover:shadow-2xl ml-5"
           }
         >
           <div className={"p-5"}>
@@ -87,7 +85,7 @@ export default function Lk() {
             <div className={"text-4xl font-bold"}>Любимое</div>
           </div>
         </Link>
-        <div
+        <Link to={"/takenOrders"}
           className={
             "w-[25vw]  transition-all cursor-grabbing shadow-xl min-h-[20vh] bg-white rounded-[15px] hover:shadow-2xl ml-5"
           }
@@ -95,7 +93,7 @@ export default function Lk() {
           <div className={"p-5"}>
             <div className={"text-4xl font-bold"}>Покупки</div>
           </div>
-        </div>
+        </Link>
         <Link to={"/historyViews"}>
           <div
             className={
@@ -111,7 +109,7 @@ export default function Lk() {
 
       {isOwner && (
         <div className="flex mt-5">
-          <Link to={"/productOrders"}>
+          <Link to={"/notVerifiedOrders"}>
             <div className="w-[30vw]  transition-all cursor-grabbing shadow-xl min-h-[20vh] bg-white rounded-[15px] hover:shadow-2xl mr-5">
               <div className="text-3xl p-5 font-bold">
                 Неподтвержденные доставки
@@ -119,15 +117,15 @@ export default function Lk() {
             </div>
           </Link>
 
-          <div
+          <Link to="/notTakenOrders"
             className={
               "w-[25vw]  transition-all cursor-grabbing shadow-xl min-h-[20vh] bg-white rounded-[15px] hover:shadow-2xl"
             }
           >
             <div className={"p-5 flex flex-col items-baseline"}>
-              <div className={"text-4xl font-bold"}>Список заказов</div>
+              <div className={"text-4xl font-bold"}>Действующие заказы</div>
             </div>
-          </div>
+          </Link>
           <Link
             to={"/admins"}
             className={

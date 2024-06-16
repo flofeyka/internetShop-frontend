@@ -9,6 +9,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
     "express-fileupload": "^1.5.0",
     "first-letter-avatar": "^1.0.2",
     "framer-motion": "^11.2.10",
@@ -24,8 +25,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "build": "react-dotenv && react-scripts build",
+    "serve": "react-dotenv && serve build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -44,6 +45,11 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "react-dotenv": {
+    "whitelist": [
+      "API_URL"
     ]
   }
 }
