@@ -20,10 +20,16 @@ export default function OrderPage() {
     dispatch(getCartList());
   }, [dispatch]);
 
-  const onSubmit = (data) => dispatch(createOrder({
-    address: data,
-    products: cartList, payment: "card"
-  }))
+  const onSubmit = (data) => {
+    dispatch(
+      createOrder({
+        address: data,
+        products: cartList,
+        payment: "card",
+      })
+    );
+    window.open("/myOrders", "_self");
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={"w-[50vw]"}>
@@ -49,9 +55,7 @@ export default function OrderPage() {
         <div className={"text-3xl border-b-1 border-solid border-black"}>
           Адрес доставки
         </div>
-        <div
-          className={"mt-3"}
-        >
+        <div className={"mt-3"}>
           <div className={"flex mb-3"}>
             <Input
               {...register("city", { required: true })}
@@ -126,7 +130,12 @@ export default function OrderPage() {
           <div>{finalPrice}₽</div>
         </div>
         <div>
-          <Button size={"lg"} type="submit" className={"w-full mt-2"} color={"primary"}>
+          <Button
+            size={"lg"}
+            type="submit"
+            className={"w-full mt-2"}
+            color={"primary"}
+          >
             Заказать
           </Button>
         </div>

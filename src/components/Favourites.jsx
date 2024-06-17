@@ -21,28 +21,28 @@ export default function Favourites() {
 
   return (
     <div>
-      <div className="p-3 bg-white rounded-2xl shadow-2xl w-[50vw] text-2xl font-semibold mb-5">
+      <div className="p-3 bg-white rounded-2xl shadow-2xl w-[75vw] text-2xl font-semibold mb-5">
         Избранное
       </div>
       {FavouritesList.length === 0 && (
-        <div className="p-3 bg-white rounded-2xl shadow-2xl w-[50vw] text-2xl text-center font-semibold">
+        <div className="p-3 bg-white rounded-2xl shadow-2xl w-[75vw] text-2xl text-center font-semibold">
           Пока что здесь пусто
         </div>
       )}{" "}
       <div>
-        <div className={"flex mt-3 max-w-[75vw] flex-wrap h-auto"}>
+        <div className={"flex mt-3 max-w-[75vw] flex-wrap h-auto justify-center"}>
           {FavouritesList.map((favourite) => {
             return (
               <div
                 className={
-                  "cursor-pointer border-b-1 mr-5 bg-white min-h-[300px] mb-5 w-[250px] rounded-2xl shadow-xl hover:shadow-2xl flex flex-col p-5"
+                  "cursor-pointer border-b-1 mr-5 bg-white min-h-[300px] mb-5 w-[300px] rounded-2xl shadow-xl hover:shadow-2xl flex flex-col p-5"
                 }
               >
                 <div>
                   <img
                     alt={"Product"}
                     className={
-                      "w-full h-[200px] rounded-xl border-solid border-black border-1"
+                      "w-full h-[250px] rounded-xl border-solid border-black border-1"
                     }
                     src={"http://localhost:5000/" + favourite.image}
                   />

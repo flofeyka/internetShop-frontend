@@ -5,7 +5,6 @@ import Register from "./components/Auth/Register";
 import Lk from "./components/Profile/Lk";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getUsersData } from "./redux/authSlice";
 import HistoryViews from "./components/Profile/HistoryViews";
 import Profile from "./components/Profile/Profile";
 import Favourites from "./components/Favourites";
@@ -21,21 +20,30 @@ import NotTakenOrders from "./components/Profile/OrderPanel/NotTakenOrders";
 import MyOrders from "./components/Profile/MyOrders";
 import NotVerifiedOrders from "./components/Profile/OrderPanel/NotVerifiedOrders";
 import TakenOrders from "./components/Profile/OrderPanel/TakenOrders";
+import { initializedApp } from "./redux/appSlice";
 
 function App() {
-  const [isAuth, isOwner] = useSelector((state) => [
+  const [isAuth, isOwner, initialized] = useSelector((state) => [
     state.Auth.isAuth,
     state.Auth.user.isOwner,
+    state.App.initialized
   ]);
   const dispatch = useDispatch();
+
   useEffect(() => {
-    dispatch(getUsersData());
+    dispatch(initializedApp());
   }, [dispatch, isAuth]);
+
+  if (!initialized) {
+    return <div className="h-full w-full flex justify-center items-center">
+      <img src="https://media4.giphy.com/media/3oEjI6SIIHBdRxXI40/200w.gif?cid=6c09b952ymsvf7f51hqrrol1e0curv88w30g0kqjlnh58bo7&ep=v1_gifs_search&rid=200w.gif&ct=g"/>
+    </div>;
+  }
 
   if (!isAuth) {
     return (
       <Routes>
-        {/*<Route path="*" element={<Navigate to="/login" />} />*/}
+        <Route path="*" element={<Navigate to="/login" />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>

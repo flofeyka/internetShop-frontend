@@ -30,8 +30,8 @@ export default function Register() {
             <div className={"mt-2"}>
                 <Input size={"lg"} type={"password"} placeholder={"Пароль"} {...register("password", {required: true})}/>
             </div>
-            <div className={"flex flex-col mt-3 justify-center"}>
-                <div className={"mb-3"}>
+            <div className={"flex flex-col mt-3 justify-center w-full"}>
+                <div className={"mb-3 mx-auto"}>
                     <ReCAPTCHA
                         sitekey="6LdxNPYpAAAAALhqKU3-g-FdEuDvREGuj_DDQgUo"
                         onChange={(value) => setValidCaptcha(value)}

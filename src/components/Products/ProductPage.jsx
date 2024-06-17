@@ -156,7 +156,7 @@ export default function ProductPage() {
       <div className="ml-5">
         <div
           className={
-            "bg-white shadow-2xl max-w-[350px]  w-[100%] p-5 min-h-[280px] rounded-2xl flex flex-col justify-between"
+            "bg-white shadow-2xl max-w-[350px] w-[350px] w-[100%] p-5 min-h-[280px] rounded-2xl flex flex-col justify-between"
           }
         >
           <div className={"text-3xl font-semibold"}>

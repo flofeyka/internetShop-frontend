@@ -13,8 +13,8 @@ export default function MyOrders() {
 
   return (
     <div>
-        <div className="p-3 bg-white rounded-2xl shadow-2xl w-[50vw] text-2xl font-semibold mb-5">Список заказов</div>
-        {myOrders.length === 0 && <div className="p-3 bg-white rounded-2xl shadow-2xl w-[50vw] text-2xl text-center font-semibold">Пока что здесь пусто</div>}      <div>
+        <div className="p-3 bg-white rounded-2xl shadow-2xl w-[55vw] text-2xl font-semibold mb-5">Список заказов</div>
+        {myOrders.length === 0 && <div className="p-3 bg-white rounded-2xl shadow-2xl w-[55vw] text-2xl text-center font-semibold">Пока что здесь пусто</div>}      <div>
         {myOrders.map((order) => {
           return (
             <div className="w-[55vw] bg-white rounded-2xl min-h-[25vh] shadow-xl hover:shadow-2xl mt-5 transition-all">
