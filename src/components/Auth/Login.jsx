@@ -28,12 +28,6 @@ export default function Login() {
                 </div>
             </div>
             <div className={"flex flex-col mt-5"}>
-                <div className={"mb-3"}>
-                    <ReCAPTCHA
-                        sitekey="6LdxNPYpAAAAALhqKU3-g-FdEuDvREGuj_DDQgUo"
-                        onChange={(value) => setValidCaptcha(value)}
-                    />
-                </div>
                 <Button size={"lg"} color={"primary"} type={"submit"}>Войти</Button>
                 <div className={"mt-3"}>Ещё нет аккаунта? <Link to={"/register"}
                                                                 className={"text-primary-400 font-bold"}>Зарегистрируйтесь</Link>
