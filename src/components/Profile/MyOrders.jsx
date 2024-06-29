@@ -32,7 +32,7 @@ export default function MyOrders() {
                 <div>
                   <img alt="order"
                     className="rounded-2xl h-[150px] w-[150px]"
-                    src={"http://localhost:5000/" + order.image}
+                    src={"https://internetshop-1.onrender.com/" + order.image}
                   />
                   {!order.canceled && !order.isTaken && order.isVerified && (
                     <div className="mt-2 w-full">

@@ -11,7 +11,7 @@ const authSlice = createSlice({
     setUserData: (state, action) => {
       state.isAuth = true;
       state.user = action.payload;
-      state.user.image = "http://localhost:5000/" + action.payload.image;
+      state.user.image = "https://internetshop-1.onrender.com/" + action.payload.image;
     },
   },
   extraReducers: (builder) => {
@@ -30,7 +30,6 @@ export const LoginSystem = createAsyncThunk(
     const data = await authAPI.login(
       payload.email,
       payload.password,
-      payload.captcha
     );
     if (data.status === 200) {
       return dispatch(setUserData(data.user));
@@ -41,13 +40,12 @@ export const LoginSystem = createAsyncThunk(
 export const RegisterSystem = createAsyncThunk(
   "auth/register",
   async (payload, { dispatch }) => {
-    const { name, email, phoneNumber, password, captcha } = payload;
+    const { name, email, phoneNumber, password } = payload;
     const data = await authAPI.register(
       email,
       name,
       phoneNumber,
       password,
-      captcha
     );
     if (data.status === 200) {
       return dispatch(setUserData(data.user));

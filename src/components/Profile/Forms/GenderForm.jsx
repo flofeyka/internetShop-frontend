@@ -9,7 +9,7 @@ export default function GenderForm({gender}) {
     })
 
     return <form onSubmit={handleSubmit((data) => console.log(data))}>
-        <RadioGroup defaultValue={null} type="submit" {...register("gender")} label={"Пол"}>
+        <RadioGroup className="sm:my-3" defaultValue={null} type="submit" {...register("gender")} label={"Пол"}>
             <Radio value={"male"}>Мужской</Radio>
             <Radio value={"female"}>Женский</Radio>
             <Radio value={"null"}>Не важно</Radio>

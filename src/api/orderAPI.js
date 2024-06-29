@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: 'http://localhost:5000/api/order/',
+    baseURL: 'https://internetshop-1.onrender.com/api/order/',
     headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${localStorage.getItem("accessToken")}`
@@ -18,7 +18,7 @@ export const orderAPI = {
     },
 
     async getTakenOrders() {
-        const Response = await instance.get("getTakenOrders");
+        const Response = await instance.get("getOrders");
         return {
             status: Response.status,
             products: Response.data
@@ -34,7 +34,7 @@ export const orderAPI = {
     },
 
     async getMyOrders() {
-        const Response = await instance.get("getMyOrders");
+        const Response = await instance.get("getOrders");
         return {
             status: Response.status, 
             products: Response.data

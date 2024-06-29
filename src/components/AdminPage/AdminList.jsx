@@ -1,7 +1,7 @@
 import { Button, Input, Modal, ModalContent } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getOwners, setOwner } from "../../../redux/profileSlice";
+import { getOwners, setOwner } from "../../redux/profileSlice";
 import AdminItem from "./AdminItem";
 
 export default function AdminList() {
@@ -20,7 +20,7 @@ export default function AdminList() {
   const [email, setEmail] = useState();
 
   return (
-    <div className="flex">
+    <div className="flex sm:flex-col sm:items-center">
       <Modal isOpen={addAdminModal} onOpenChange={setAddAdminModal}>
         <ModalContent className="p-3">
           <div className="text-3xl text-center mb-3 font-semibold">Добавить администратора</div>
@@ -32,16 +32,16 @@ export default function AdminList() {
             }} color="success">Добавить</Button>
         </ModalContent>
       </Modal>
-      <div className="rounded-2xl mr-5 min-w-[50vw]">
-      <div className="p-3 bg-white rounded-2xl shadow-2xl w-[50vw] text-2xl font-semibold mb-5">Список администраторов</div>
+      <div className="rounded-2xl lg:mr-5 min-w-[50vw]">
+      <div className="p-3 bg-white rounded-2xl shadow-2xl w-[50vw] sm:w-[95vw] text-2xl font-semibold mb-5">Список администраторов</div>
       {adminList.length === 0 && <div className="p-3 bg-white rounded-2xl shadow-2xl w-[50vw] text-2xl text-center font-semibold">Пока что здесь пусто</div>}
-        <div className="mt-2">
+        <div className="mt-2 sm:w-[95vw]">
           {adminList.map((admin) => {
             return <AdminItem id={admin.id} currentUserId={userId} image={admin.image} name={admin.name} ownProducts={admin.ownProducts}/>
           })}
         </div>
       </div>
-      <div className="bg-white w-[20vw] max-h-[20vh] p-3 rounded-2xl shadow-2xl">
+      <div className="bg-white w-[20vw] sm:w-[95vw] max-h-[20vh] p-3 rounded-2xl shadow-2xl">
         <div className="text-2xl font-semibold border-b-1 border-black mb-2">
           Панель управления
         </div>

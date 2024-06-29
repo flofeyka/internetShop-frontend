@@ -6,7 +6,7 @@ import {
   editProduct,
   editProductImage,
   getProduct,
-} from "../../redux/productSlice";
+} from "../redux/productSlice";
 import {
   Button,
   Input,
@@ -18,13 +18,13 @@ import {
   addOneToCart,
   deleteOneFromCart,
   getCartList,
-} from "../../redux/cartSlice";
-import Counter from "../Counter";
+} from "../redux/cartSlice";
+import Counter from "./Counter";
 import {
   addFavourite,
   deleteFavourite,
   getAllFavourites,
-} from "../../redux/favouritesSlice";
+} from "../redux/favouritesSlice";
 import { useForm } from "react-hook-form";
 
 export default function ProductPage() {
@@ -67,7 +67,7 @@ export default function ProductPage() {
   const [modalValue, setModalValue] = useState();
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={"h-[100%] flex"}>
+    <form onSubmit={handleSubmit(onSubmit)} className={"h-[100%] flex sm:flex-col"}>
       <Modal isOpen={modal} onOpenChange={setModal}>
         <ModalContent className="p-5">
           <div className="text-2xl font-semibold text-center mb-2">
@@ -106,21 +106,21 @@ export default function ProductPage() {
         </ModalContent>
       </Modal>
 
-      <div className="bg-white rounded-2xl w-[70vw] shadow-2xl mb-5">
+      <div className="bg-white rounded-2xl min-w-[70vw] sm:w-[93vw] shadow-2xl mb-5">
         <div className={"flex justify-between p-5"}>
-          <div className={"flex w-full"}>
+          <div className={"flex sm:flex-col w-full"}>
             <label>
               <img
-                src={"http://localhost:5000/" + productData.image}
+                src={"https://internetshop-1.onrender.com/" + productData.image}
                 className={
-                  "rounded cursor-grabbing max-w-[450px] max-h-[450px] min-h-[400px] min-w-[400px]"
+                  "rounded cursor-grabbing max-w-[450px] max-h-[450px]  min-h-[300px] min-w-[300px] sm:w-full sm:border-1.5 p-3"
                 }
                 alt={"product"}
               />
-              {editMode && <input onChange={(e) => dispatch(editProductImage({id: productData.id, file: e.target.files[0]}))} type="file" hidden />}
+              {editMode && <input onChange={(e) => dispatch(editProductImage({ id: productData.id, file: e.target.files[0] }))} type="file" hidden />}
             </label>
-            <div className={"ml-5 break-words w-full"}>
-              <div className={"font-semibold text-3xl w-full"}>
+            <div className={"lg:ml-5 break-words w-full"}>
+              <div className={"font-semibold text-3xl w-full sm:mt-2"}>
                 {editMode ? (
                   <Input
                     {...register("name")}
@@ -153,10 +153,10 @@ export default function ProductPage() {
           </div>
         </div>
       </div>
-      <div className="ml-5">
+      <div className="lg:ml-5">
         <div
           className={
-            "bg-white shadow-2xl max-w-[350px] w-[350px] w-[100%] p-5 min-h-[280px] rounded-2xl flex flex-col justify-between"
+            "bg-white shadow-2xl min-w-[350px] w-[350px] sm:w-[93vw] w-[100%] p-5 min-h-[245px] rounded-2xl flex flex-col justify-between"
           }
         >
           <div className={"text-3xl font-semibold"}>
@@ -172,9 +172,6 @@ export default function ProductPage() {
             )}
           </div>
           <div className={"text-[15px] mt-2"}>
-            <div>
-              <b>Дата ближайшей доставки</b>: <div>15 июня</div>
-            </div>
             <div>
               <b>Исполнитель</b>: <div>{productData.owner}</div>
             </div>

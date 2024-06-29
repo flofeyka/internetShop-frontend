@@ -12,11 +12,11 @@ export default function NotTakenOrders() {
 
   return (
     <div>
-      <div className="p-3 bg-white rounded-2xl shadow-2xl w-[50vw] text-2xl font-semibold mb-5">
+      <div className="p-3 bg-white rounded-2xl shadow-2xl w-[50vw] sm:w-[90vw] text-2xl font-semibold mb-5">
         Действующие заказы
       </div>
       {notTakenOrders.length === 0 && (
-        <div className="p-3 bg-white rounded-2xl shadow-2xl w-[50vw] text-2xl text-center font-semibold">
+        <div className="p-3 bg-white rounded-2xl shadow-2xl w-[50vw] sm:w-[90vw] text-2xl text-center font-semibold">
           Пока что здесь пусто
         </div>
       )}

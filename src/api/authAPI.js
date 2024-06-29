@@ -1,14 +1,14 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL: `http://localhost:5000/api/auth`,
+    baseURL: `https://internetshop-1.onrender.com/api/auth`,
     withCredentials: true
 })
 
 export const authAPI = {
-    async login(email, password, captcha) {
+    async login(email, password) {
         try {
-            const Response = await instance.post("/login", {email, password, captcha});
+            const Response = await instance.post("/login", {email, password});
             localStorage.setItem("accessToken", Response.data.accessToken);
             return {
                 status: Response.status,
@@ -20,9 +20,9 @@ export const authAPI = {
         }
     },
 
-    async register(email, name, phoneNumber, password, captcha) {
+    async register(email, name, phoneNumber, password) {
         try {
-            const Response = await instance.post("/register", {email, name, phoneNumber, password, captcha});
+            const Response = await instance.post("/register", {email, name, phoneNumber, password});
             localStorage.setItem("accessToken", Response.data.accessToken);
             return {
                 status: Response.status,
@@ -50,6 +50,7 @@ export const authAPI = {
     async logout() {
         try {
             const Response = await instance.delete("/logout");
+            localStorage.clear();
             return Response.data;
         } catch (e) {
             console.log(e);

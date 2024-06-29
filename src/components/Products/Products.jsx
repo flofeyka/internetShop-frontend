@@ -30,7 +30,7 @@ export default function MyProducts() {
                   <div>
                     <img
                       alt="product"
-                      src={"http://localhost:5000/" + product.image}
+                      src={"https://internetshop-1.onrender.com/" + product.image}
                       className="min-w-[125px] h-[125px] rounded-2xl"
                     />
                   </div>

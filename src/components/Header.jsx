@@ -16,7 +16,7 @@ export default function Header() {
         "flex bg-[white] border-b-1 border-solid border-black justify-between px-4 py-1 items-center"
       }
     >
-      <Link to={"/shop"} className={"text-3xl font-semibold "}>
+      <Link to={"/shop"} className={"text-3xl font-semibold sm:hidden"}>
         Магазин одежды
       </Link>
       <div className={"flex"}>
@@ -28,7 +28,7 @@ export default function Header() {
             }
           }}
           onChange={(e) => setValue(e.target.value)}
-          className={"w-[30vw]"}
+          className={"w-[30vw] sm:w-[65vw] mr-2"}
           size={"lg"}
           placeholder={"Введите товар"}
         />
@@ -40,7 +40,7 @@ export default function Header() {
           Поиск
         </Button>
       </div>
-      <div className={"flex"}>
+      <div className={"flex sm:hidden"}>
         <Link to={`/favourites`} className={"mr-3 flex flex-col items-center"}>
           <div>
             <img
