@@ -1,5 +1,5 @@
 import { Button, Input, Radio, RadioGroup } from "@nextui-org/react";
-import ProductItem from "./ProductItem";
+import ProductItem from "../Cart/ProductItem";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getCartList } from "../../redux/cartSlice";
@@ -120,7 +120,7 @@ export default function OrderPage() {
         }
       >
         <div className={"font-bold border-b-1 border-black text-4xl"}>
-          <div className={"mb-3"}> Итого</div>
+          <div className={"mb-3"}>Итого</div>
         </div>
         <div className={"mt-2 flex justify-between text-2xl w-full"}>
           Сумма товаров: <div>{totalCount}</div>

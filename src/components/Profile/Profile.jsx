@@ -19,7 +19,7 @@ export default function Profile() {
   }, [dispatch, id]);
 
   return (
-    <div className={"w-[65vw]"}>
+    <div className={"w-[65vw] sm:w-[95vw] sm:mb-5"}>
       <div
         className={
           "min-h-[22.5vh]  transition-all bg-white rounded-[20px] shadow-xl hover:shadow-2xl"
@@ -39,7 +39,7 @@ export default function Profile() {
             </label>
             <InputForm formName={"name"} name={profileData.name} />
           </div>
-          <div className={"mt-5 flex"}>
+          <div className={"mt-5 flex sm:flex-col"}>
             <div>
               <span className={"text-gray-400"}>Электронная почта</span>:{" "}
               <InputForm formName={"email"} name={profileData.email} />
@@ -50,7 +50,7 @@ export default function Profile() {
                 </span>
               </div>
             </div>
-            <div className={"flex w-full justify-center"}>
+            <div className={"flex w-full justify-center sm:justify-start"}>
               <GenderForm gender={profileData.gender} />
             </div>
             <div>
@@ -65,22 +65,22 @@ export default function Profile() {
           "w-full min-h-[20vh]  transition-all bg-white rounded-[20px] shadow-xl hover:shadow-2xl mt-5 justify-center"
         }
       >
-        <div className={"p-5 flex"}>
-          <div className={"h-[15vh] w-[20vw] rounded-[20px] bg-gray-100 mr-5"}>
-            <div className={"p-3"}>
-              <div className={"text-3xl font-bold"}>
+        <div className={"p-5 flex sm:flex-col"}>
+          <div className={"h-[15vh] w-[20vw] sm:h-full sm:w-full sm:mb-2 rounded-[20px] bg-gray-100 mr-5"}>
+            <div className={"p-3 sm:flex sm:justify-between sm:items-center"}>
+              <div className={"text-3xl sm:text-2xl font-bold"}>
                 {profileData.amountOfOrders} ₽
               </div>
               <div className={"text-gray-400"}>Общая сумма заказов</div>
             </div>
           </div>
 
-          <div className={"h-[15vh] w-[20vw] rounded-[20px] bg-gray-100 "}>
-            <div className={"p-3"}>
-              <div className={"text-3xl font-bold"}>
+          <div className={"h-[15vh] sm:h-full w-[20vw] sm:w-full rounded-[20px] bg-gray-100"}>
+            <div className={"p-3 sm:flex sm:justify-between sm:items-center"}>
+              <div className={"text-3xl sm:text-2xl font-bold"}>
                 {Math.round(profileData.percentOfBuyers)}%
               </div>
-              <div className={"text-gray-400"}>Процент забранных заказов</div>
+              <div className={"text-gray-400"}>Забранных заказов</div>
             </div>
           </div>
         </div>

@@ -12,7 +12,7 @@ const profileSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(getUserById.fulfilled, (state, action) => {
             state.profileData = action.payload;
-            state.profileData.image = "http://localhost:5000/" + action.payload.image;
+            state.profileData.image = "https://internetshop-1.onrender.com/" + action.payload.image;
         });
         builder.addCase(getViewsHistory.fulfilled, (state, action) => {
             state.viewsHistory = action.payload;

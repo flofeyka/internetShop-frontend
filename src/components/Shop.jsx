@@ -65,15 +65,15 @@ export default function Shop() {
           return (
             <div
               className={
-                "w-[350px] min-h-[400px] bg-white rounded-2xl mb-5 shadow-2xl flex p-3 mr-5"
+                "w-[350px] min-h-[400px] bg-white rounded-2xl mb-5 shadow-2xl flex p-3 lg:mr-5"
               }
             >
               <div className={"flex flex-col items-center mx-auto w-full"}>
                 <img
                   alt={"product"}
-                  src={"http://localhost:5000/" + i.image}
+                  src={"https://internetshop-1.onrender.com/" + i.image}
                   className={
-                    "h-[300px] w-full rounded-2xl border-1 border-solid border-black"
+                    "min-h-[300px] h-[300px] w-full rounded-xl border-1 border-solid border-black"
                   }
                 />
                 <Link
@@ -82,7 +82,7 @@ export default function Shop() {
                 >
                   {i.name}
                 </Link>
-                <div className={"font-sans text-xl mt-1"}>{i.price}₽</div>
+                <div className={"font-sans text-2xl mt-1"}>{i.price}₽</div>
                 {cartList.find((item) => item.id === i.id) ? (
                   <div className={"flex w-full items-end h-full"}>
                     <Button

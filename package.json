@@ -25,8 +25,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-dotenv && react-scripts build",
-    "serve": "react-dotenv && serve build",
+    "build": "react-scripts build",
+    "serve": "serve build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

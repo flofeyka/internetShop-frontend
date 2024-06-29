@@ -23,7 +23,7 @@ export default function AdminItem({
         <div>
           <img alt="admin"
             className="h-[125px] w-[125px] rounded-full"
-            src={"http://localhost:5000/" + image}
+            src={"https://internetshop-1.onrender.com/" + image}
           />
           {id !== currentUserId && (
             <div className="flex w-full ">

@@ -1,7 +1,7 @@
 import { Button, Input, Modal, ModalContent } from "@nextui-org/react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { deleteOwner } from "../../../redux/profileSlice";
+import { deleteOwner } from "../../redux/profileSlice";
 
 export default function DeleteModal({ deleteMode, setDeleteMode, name, adminId }) {
     const dispatch = useDispatch();

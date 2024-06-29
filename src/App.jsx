@@ -1,5 +1,5 @@
 import "./App.css";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { NavLink, Navigate, Route, Routes } from "react-router-dom";
 import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
 import Lk from "./components/Profile/Lk";
@@ -11,15 +11,15 @@ import Favourites from "./components/Favourites";
 import Header from "./components/Header";
 import Cart from "./components/Cart/Cart";
 import Shop from "./components/Shop";
-import OrderPage from "./components/Cart/Order";
-import ProductPage from "./components/Products/ProductPage";
+import OrderPage from "./components/Order/Order";
+import ProductPage from "./components/ProductPage";
 import MyProducts from "./components/Products/Products";
 import CreateProduct from "./components/Products/CreateProduct";
-import AdminList from "./components/Profile/AdminPage/AdminList";
 import NotTakenOrders from "./components/Profile/OrderPanel/NotTakenOrders";
 import MyOrders from "./components/Profile/MyOrders";
 import NotVerifiedOrders from "./components/Profile/OrderPanel/NotVerifiedOrders";
 import TakenOrders from "./components/Profile/OrderPanel/TakenOrders";
+import AdminList from "./components/AdminPage/AdminList";
 import { initializedApp } from "./redux/appSlice";
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
 
   if (!initialized) {
     return <div className="h-full w-full flex justify-center items-center">
-      <img src="https://media4.giphy.com/media/3oEjI6SIIHBdRxXI40/200w.gif?cid=6c09b952ymsvf7f51hqrrol1e0curv88w30g0kqjlnh58bo7&ep=v1_gifs_search&rid=200w.gif&ct=g"/>
+      <img alt="loader" src="https://media4.giphy.com/media/3oEjI6SIIHBdRxXI40/200w.gif?cid=6c09b952ymsvf7f51hqrrol1e0curv88w30g0kqjlnh58bo7&ep=v1_gifs_search&rid=200w.gif&ct=g" />
     </div>;
   }
 
@@ -51,9 +51,9 @@ function App() {
   }
 
   return (
-    <div className={"min-h-screen h-[100%] bg-[aliceblue]"}>
+    <div className={"min-h-screen h-[100%] bg-gray-100"}>
       <Header />
-      <div className={"w-full max-w-[100vw] flex flex-col items-center mt-5"}>
+      <div className={"w-full max-w-[100vw] flex flex-col items-center mt-5 sm:mb-[9vh]"}>
         <Routes>
           <Route path="*" element={<Navigate to={"/lk"} />} />
           <Route path="/shop" element={<Shop />} />
@@ -80,6 +80,20 @@ function App() {
             </>
           )}
         </Routes>
+      </div>
+      <div className="lg:hidden bg-white fixed w-[100vw] -bottom-1 h-[10vh] flex items-center px-7 justify-between">
+        <NavLink to="/shop">
+          <img src="/Mobile/House.svg" className="h-[5vh]" />
+        </NavLink>
+        <NavLink to="/cart">
+          <img src="/Mobile/Cart.svg" className="h-[5vh]" />
+        </NavLink>
+        <NavLink to="/favourites">
+          <img src="/Mobile/Heart.svg" className="h-[5vh]" />
+        </NavLink>
+        <NavLink to="/lk">
+          <img src="/Mobile/Profile.svg" className="h-[5vh]" />
+        </NavLink>
       </div>
     </div>
   );

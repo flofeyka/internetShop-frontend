@@ -2,7 +2,6 @@ import { Button, Input, Textarea } from "@nextui-org/react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { createProduct } from "../../redux/productSlice";
-import { Link, NavLink } from "react-router-dom";
 
 export default function CreateProduct() {
     const { register, handleSubmit, formState: { errors } } = useForm()
