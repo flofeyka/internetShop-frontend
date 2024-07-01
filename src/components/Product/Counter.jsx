@@ -1,5 +1,5 @@
 import { Button } from "@nextui-org/react";
-import { updateProductCount } from "../redux/cartSlice";
+import { updateProductCount } from "../../redux/cartSlice";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { getNotVerifiedOrders } from "../../../redux/orderSlice";
-import OrderItem from "./OrderItem";
+import { getNotVerifiedOrders } from "../../redux/orderSlice";
+import OrderItem from "../../components/OrderItem";
 import { useEffect } from "react";
 
 export default function NotVerifiedOrders() {

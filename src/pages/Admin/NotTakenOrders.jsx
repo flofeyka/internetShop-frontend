@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getNotTakenOrders } from "../../../redux/orderSlice";
-import OrderItem from "./OrderItem";
+import { getNotTakenOrders } from "../../redux/orderSlice";
+import OrderItem from "../../components/OrderItem";
 
 export default function NotTakenOrders() {
   const notTakenOrders = useSelector((state) => state.Order.notTakenOrders);

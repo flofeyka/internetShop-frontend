@@ -1,7 +1,7 @@
 import {useEffect} from "react";
 import {getCartList} from "../../redux/cartSlice";
 import {useDispatch} from "react-redux";
-import Counter from "../Counter";
+import Counter from "../Product/Counter";
 import {Link} from "react-router-dom";
 
 export default function ProductItem({id, image, name, finalProductPrice, quantity, count}) {

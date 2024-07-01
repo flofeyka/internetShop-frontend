@@ -2,8 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Image, Switch } from "@nextui-org/react";
 import { useEffect } from "react";
 import { getUserById, uploadUsersImage } from "../../redux/profileSlice";
-import GenderForm from "./Forms/GenderForm";
-import InputForm from "./Forms/InputForm";
+import GenderForm from "../../components/Profile/GenderForm";
+import InputForm from "../../components/Profile/InputForm";
 
 
 export default function Profile() {

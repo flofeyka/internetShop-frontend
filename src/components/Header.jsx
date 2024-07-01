@@ -11,13 +11,9 @@ export default function Header() {
   const [value, setValue] = useState();
 
   return (
-    <header
-      className={
-        "flex bg-[white] border-b-1 border-solid border-black justify-between px-4 py-1 items-center"
-      }
-    >
-      <Link to={"/shop"} className={"text-3xl font-semibold sm:hidden"}>
-        Магазин одежды
+    <header className={"flex bg-[#1aa4b8] border-b-1 text-white border-solid border-black justify-between px-4 py-1 items-center"}>
+      <Link to={"/shop"} className={"text-5xl font-bold sm:hidden ml-5"}>
+        TRILLIOONER
       </Link>
       <div className={"flex"}>
         <Input
@@ -28,15 +24,11 @@ export default function Header() {
             }
           }}
           onChange={(e) => setValue(e.target.value)}
-          className={"w-[30vw] sm:w-[65vw] mr-2"}
+          className={"w-[30vw] sm:w-[65vw]"}
           size={"lg"}
           placeholder={"Введите товар"}
         />
-        <Button
-          onClick={() => dispatch(setSearchText(value))}
-          color={"primary"}
-          size={"lg"}
-        >
+        <Button onClick={() => dispatch(setSearchText(value))} size={"lg"}>
           Поиск
         </Button>
       </div>

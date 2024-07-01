@@ -1,10 +1,10 @@
 import { Button, Input, Radio, RadioGroup } from "@nextui-org/react";
-import ProductItem from "../Cart/ProductItem";
+import ProductItem from "../components/Private/ProductItem";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getCartList } from "../../redux/cartSlice";
+import { getCartList } from "../redux/cartSlice";
 import { useForm } from "react-hook-form";
-import { createOrder } from "../../redux/orderSlice";
+import { createOrder } from "../redux/orderSlice";
 
 export default function OrderPage() {
   const [cartList, finalPrice, totalCount] = useSelector((state) => [
