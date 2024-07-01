@@ -1,25 +1,25 @@
 import "./App.css";
 import { NavLink, Navigate, Route, Routes } from "react-router-dom";
-import Login from "./components/Auth/Login";
-import Register from "./components/Auth/Register";
-import Lk from "./components/Profile/Lk";
+import Login from "./pages/Auth/Login";
+import Register from "./pages/Auth/Register";
+import Lk from "./pages/Lk/Lk";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import HistoryViews from "./components/Profile/HistoryViews";
-import Profile from "./components/Profile/Profile";
-import Favourites from "./components/Favourites";
+import HistoryViews from "./pages/Lk/HistoryViews";
+import Profile from "./pages/Lk/Profile";
+import Favourites from "./pages/Lk/FavouritesPage";
 import Header from "./components/Header";
-import Cart from "./components/Cart/Cart";
-import Shop from "./components/Shop";
-import OrderPage from "./components/Order/Order";
-import ProductPage from "./components/ProductPage";
-import MyProducts from "./components/Products/Products";
-import CreateProduct from "./components/Products/CreateProduct";
-import NotTakenOrders from "./components/Profile/OrderPanel/NotTakenOrders";
-import MyOrders from "./components/Profile/MyOrders";
-import NotVerifiedOrders from "./components/Profile/OrderPanel/NotVerifiedOrders";
-import TakenOrders from "./components/Profile/OrderPanel/TakenOrders";
-import AdminList from "./components/AdminPage/AdminList";
+import Cart from "./pages/Cart";
+import Shop from "./pages/ShopPage";
+import OrderPage from "./pages/Order";
+import ProductPage from "./pages/ProductPage";
+import MyProducts from "./pages/Products";
+import CreateProduct from "./pages/Admin/CreateProduct";
+import NotTakenOrders from "./pages/Admin/NotTakenOrders";
+import MyOrders from "./pages/Lk/MyOrders";
+import NotVerifiedOrders from "./pages/Admin/NotVerifiedOrders";
+import TakenOrders from "./pages/Lk/TakenOrders";
+import AdminList from "./pages/Admin/AdminPage";
 import { initializedApp } from "./redux/appSlice";
 
 function App() {
@@ -83,16 +83,16 @@ function App() {
       </div>
       <div className="lg:hidden bg-white fixed w-[100vw] -bottom-1 h-[10vh] flex items-center px-7 justify-between">
         <NavLink to="/shop">
-          <img src="/Mobile/House.svg" className="h-[5vh]" />
+          <img src="/Mobile/House.svg" alt="home" className="h-[5vh]" />
         </NavLink>
         <NavLink to="/cart">
-          <img src="/Mobile/Cart.svg" className="h-[5vh]" />
+          <img src="/Mobile/Cart.svg" alt="cart" className="h-[5vh]" />
         </NavLink>
         <NavLink to="/favourites">
-          <img src="/Mobile/Heart.svg" className="h-[5vh]" />
+          <img src="/Mobile/Heart.svg" alt="favourites" className="h-[5vh]" />
         </NavLink>
         <NavLink to="/lk">
-          <img src="/Mobile/Profile.svg" className="h-[5vh]" />
+          <img src="/Mobile/Profile.svg" alt="profile" className="h-[5vh]" />
         </NavLink>
       </div>
     </div>

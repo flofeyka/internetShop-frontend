@@ -19,7 +19,7 @@ import {
   deleteOneFromCart,
   getCartList,
 } from "../redux/cartSlice";
-import Counter from "./Counter";
+import Counter from "../components/Product/Counter";
 import {
   addFavourite,
   deleteFavourite,

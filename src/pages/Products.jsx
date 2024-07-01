@@ -2,7 +2,7 @@ import { Button } from "@nextui-org/react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getMyProducts } from "../../redux/productSlice";
+import { getMyProducts } from "../redux/productSlice";
 
 export default function MyProducts() {
   const Products = useSelector((state) => state.Product.myProductsData);

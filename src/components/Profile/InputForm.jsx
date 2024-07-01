@@ -2,7 +2,7 @@ import {useForm} from "react-hook-form";
 import {useState} from "react";
 import {Input} from "@nextui-org/react";
 import {useDispatch} from "react-redux";
-import {editProfileData} from "../../../redux/profileSlice";
+import {editProfileData} from "../../redux/profileSlice";
 
 export default function InputForm({name, formName}) {
     const {register, handleSubmit} = useForm({

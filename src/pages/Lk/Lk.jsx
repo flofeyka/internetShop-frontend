@@ -21,7 +21,7 @@ export default function Lk() {
     <div>
       <div className={"flex sm:flex-col sm:items-center"}>
         <Link to={"/profile"}>
-          <div className="transition-all w-[30vw]  sm:w-[100vw] bg-gray-100 cursor-grabbing lg:shadow-xl min-h-[20vh] lg:rounded-[15px] lg:hover:shadow-2xl lg:mr-5 sm:mb-2">
+          <div className="transition-all w-[30vw] sm:w-[95vw] bg-gray-100 cursor-grabbing lg:shadow-xl min-h-[20vh] lg:rounded-[15px] lg:hover:shadow-2xl lg:mr-5 sm:mb-2">
             <div className={"p-5"}>
               <div className={"flex items-center"}>
                 <Image
@@ -110,7 +110,7 @@ export default function Lk() {
       {isOwner && (
         <div className="flex mt-5 sm:flex-col sm:items-center">
           <Link to={"/notVerifiedOrders"}>
-            <div className="w-[30vw] sm:w-[90vw] sm:h-[10vh] transition-all cursor-grabbing shadow-xl lg:min-h-[20vh] bg-white rounded-[15px] hover:shadow-2xl sm:mb-2 lg:mr-5">
+            <div className="w-[30vw] sm:w-[90vw] sm:h-[10vh] transition-all cursor-grabbing shadow-xl md:h-[17.5vh] lg:min-h-[20vh] bg-white rounded-[15px] hover:shadow-2xl sm:mb-2 lg:mr-5">
               <div className="text-4xl sm:text-2xl p-5 font-bold">
                 Заказы
               </div>
@@ -132,7 +132,7 @@ export default function Lk() {
               "w-[25vw] sm:w-[90vw] sm:h-[10vh]  transition-all cursor-grabbing shadow-xl lg:min-h-[20vh] bg-white rounded-[15px] hover:shadow-2xl sm:mb-2 lg:ml-5"
             }
           >
-            <div className={"p-5"}>
+            <div className={"p-5 text-wrap"}>
               <div className={"text-4xl sm:text-2xl font-bold"}>Администраторы</div>
             </div>
           </Link>

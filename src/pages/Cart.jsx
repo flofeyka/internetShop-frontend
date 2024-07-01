@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getCartList } from "../../redux/cartSlice";
+import { getCartList } from "../redux/cartSlice";
 import { Button } from "@nextui-org/react";
-import ProductItem from "./ProductItem";
+import ProductItem from "../components/Private/ProductItem";
 import { Link } from "react-router-dom";
-import { setProducts } from "../../redux/orderSlice";
+import { setProducts } from "../redux/orderSlice";
 
 export default function Cart() {
   const [cartList, totalCount, finalPrice] = useSelector((state) => [

@@ -10,66 +10,66 @@ const instance = axios.create({
 
 export const orderAPI = {
     async verifyOrder(id) {
-        const Response = await instance.post(`verifyOrder/${id}`);
+        const {data, status} = await instance.post(`verifyOrder/${id}`);
         return {
-            status: Response.status,
-            data: Response.data
+            status: status,
+            data: data
         }
     },
 
     async getTakenOrders() {
-        const Response = await instance.get("getOrders");
+        const {data, status} = await instance.get("getOrders?sort=takenOrders");
         return {
-            status: Response.status,
-            products: Response.data
+            status: status,
+            products: data
         }
     },
 
     async getNotVerifiedOrders() {
-        const Response = await instance.get("getNotVerifiedOrders");
+        const {data, status} = await instance.get("getOrders?sort=notVerified");
         return {
-            status: Response.status,
-            products: Response.data
+            status: status,
+            products: data
         }
     },
 
     async getMyOrders() {
-        const Response = await instance.get("getOrders");
+        const {data, status} = await instance.get("getOrders?sort=mineOrders");
         return {
-            status: Response.status, 
-            products: Response.data
+            status: status, 
+            products: data
         }
     },
 
     async takeOrder(id) {
-        const Response = await instance.post(`takeOrder/${id}`);
+        const {data, status} = await instance.post(`takeOrder/${id}`);
         return {
-            status: Response.status,
-            data: Response.data
+            status: status,
+            data: data
         }
     },
 
     async haveOrder(address, products, payment) {
-        const Response = await instance.post("haveOrder", {address, products, payment});
+        const {data, status} = await instance.post("haveOrder", {address, products, payment});
         return {
-            status: Response.status,
-            data: Response.data
+            status: status,
+            data: data
         }
     },
 
     async cancelOrder(id) {
-        const Response = await instance.delete(`cancelOrder/${id}`);
+        const {data, status} = await instance.delete(`cancelOrder/${id}`);
         return {
-            status: Response.status,
-            data: Response.data
+            status: status,
+            data: data
         }
     },
 
     async getNotTakenOrders() {
-        const Response = await instance.get("getOrders");
+        const {data, status} = await instance.get("getOrders?sort=notTakenOrders");
         return {
-            status: Response.status,
-            orders: Response.data
+            status: status,
+            orders: data
         }
     }
 

@@ -1,6 +1,6 @@
 import { Button } from "@nextui-org/react";
 import { useDispatch } from "react-redux";
-import { cancelOrder, verifyOrder } from "../../../redux/orderSlice";
+import { cancelOrder, verifyOrder } from "../redux/orderSlice";
 
 export default function OrderItem({ order }) {
   const dispatch = useDispatch();

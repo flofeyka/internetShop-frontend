@@ -2,7 +2,7 @@ import { Button, Input, Modal, ModalContent } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getOwners, setOwner } from "../../redux/profileSlice";
-import AdminItem from "./AdminItem";
+import AdminItem from "../../components/AdminPage/AdminItem";
 
 export default function AdminList() {
   const [adminList, userId] = useSelector((state) => [
