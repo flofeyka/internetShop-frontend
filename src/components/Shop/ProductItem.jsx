@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { addOneToCart, deleteOneFromCart, getCartList } from "../../redux/cartSlice";
 import { useEffect } from "react";
 
-export default function ProductItem({ id, image, price, name }) {
+export default function ProductItem({ id, image, price, name, ownerName }) {
     const dispatch = useDispatch();
     const cartList = useSelector(state => state.Cart.cartList);
     useEffect(() => {
@@ -26,7 +26,7 @@ export default function ProductItem({ id, image, price, name }) {
                     </div>
                     <div className={"font-sans text-xl mt-1"}>{price}₽</div>
                     <div className="text-ellipsis overflow-hidden h-full whitespace-nowrap">
-                        <Link to="">{"{product.owner.name}"}</Link> / {" "}
+                        <Link to="">{ownerName}</Link> / {" "}
                         <Link
                             to={`/product/${id}`}
                         >

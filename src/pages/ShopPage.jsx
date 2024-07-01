@@ -56,7 +56,7 @@ export default function Shop() {
       </div>}
 
       <div className={"flex flex-wrap justify-center"}>
-        {productList.map(product => <ProductItem id={product.id} image={product.image} price={product.price} name={product.name} />)}
+        {productList.map(product => <ProductItem id={product.id} image={product.image} price={product.price} name={product.name} ownerName={product.owner.name}/>)}
       </div>
     </div>
   );
