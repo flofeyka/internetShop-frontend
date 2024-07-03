@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: `https://internetshop-1.onrender.com/api/favourites/`,
+  baseURL: `${process.env.REACT_APP_API_URL}/favourites/`,
   headers: {
     Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
   },
