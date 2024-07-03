@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: `https://internetshop-1.onrender.com/api/cart/`,
+  baseURL: `${process.env.API_URL}/cart/`,
   headers: {
     Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
   },
