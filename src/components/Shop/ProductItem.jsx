@@ -18,7 +18,7 @@ export default function ProductItem({ id, image, price, name, ownerName }) {
                     <div>
                         <img
                             alt={"product"}
-                            src={"https://internetshop-1.onrender.com/" + image}
+                            src={process.env.REACT_APP_STATIC_URL + image}
                             className={
                                 "h-[270px] sm:h-[250px] w-[150px] w-full rounded-xl border-1 border-solid border-black"
                             }

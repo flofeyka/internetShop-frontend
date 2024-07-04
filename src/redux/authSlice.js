@@ -11,7 +11,7 @@ const authSlice = createSlice({
     setUserData: (state, action) => {
       state.isAuth = true;
       state.user = action.payload;
-      state.user.image = "https://internetshop-1.onrender.com/" + action.payload.image;
+      state.user.image = process.env.REACT_APP_STATIC_URL + action.payload.image;
     },
   },
   extraReducers: (builder) => {
