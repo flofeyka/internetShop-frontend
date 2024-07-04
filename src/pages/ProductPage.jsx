@@ -111,7 +111,7 @@ export default function ProductPage() {
           <div className={"flex sm:flex-col w-full"}>
             <label>
               <img
-                src={"https://internetshop-1.onrender.com/" + productData.image}
+                src={process.env.REACT_APP_STATIC_URL + productData.image}
                 className={
                   "rounded cursor-grabbing max-w-[450px] max-h-[450px]  min-h-[300px] min-w-[300px] sm:w-full sm:border-1.5 p-3"
                 }

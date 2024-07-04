@@ -16,7 +16,7 @@ export default function OrderItem({ order }) {
         <img
           className="h-[175px] w-[175px] rounded-2xl mb-2"
           alt="order"
-          src={"https://internetshop-1.onrender.com/" + order.image}
+          src={process.env.REACT_APP_STATIC_URL + order.image}
         />
         {!order.isTaken && (
           <Button

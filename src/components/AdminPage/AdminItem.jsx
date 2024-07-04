@@ -23,7 +23,7 @@ export default function AdminItem({
         <div>
           <img alt="admin"
             className="h-[125px] w-[125px] rounded-full"
-            src={"https://internetshop-1.onrender.com/" + image}
+            src={process.env.REACT_APP_STATIC_URL + image}
           />
           {id !== currentUserId && (
             <div className="flex w-full ">
